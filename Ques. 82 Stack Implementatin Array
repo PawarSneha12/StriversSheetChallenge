@@ -1,0 +1,60 @@
+Ques. 82 Stack Implementatin Array
+
+Solution:
+
+import java.util.* ;
+import java.io.*; 
+
+public class Stack {
+    int[] s;
+    int top=-1;
+    int c;
+    Stack(int capacity){
+
+        if(isFull()!=1){
+
+        s=new int[capacity];
+
+        this.c=capacity;
+
+        }}
+    void push(int num) {
+        // Write your code here.
+        top++;
+        s[top]=num;
+
+    }
+    int pop() {
+         if(isEmpty()!=1){
+        int x =s[top];
+        top--;
+        return x;
+    }
+    else{
+        return -1;
+    }}
+    int top() {
+         if(isEmpty()!=1){
+             return s[top];
+    }
+    else{
+        return -1;
+    }}
+    int isEmpty() {
+         if(top==-1){
+            return 1;}
+        else{
+            return 0;
+        }
+    }
+    int isFull() {
+         if(top==c){
+
+            return 1;
+
+        } 
+
+        else{   return 0;}
+
+    }
+    }
