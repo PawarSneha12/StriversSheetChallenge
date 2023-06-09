@@ -1,0 +1,26 @@
+//Question 16. Majority Element II
+
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution 
+{
+    public static ArrayList<Integer> majorityElementII(ArrayList<Integer> arr) 
+    {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        ArrayList<Integer> list=new ArrayList<>();
+        int n=arr.size();
+		for(int i=0;i<n;i++){
+			hm.put(arr.get(i),hm.getOrDefault(arr.get(i),0)+1);
+		}
+		for(Map.Entry<Integer,Integer> h:hm.entrySet()){
+			if(h.getValue()>n/3){
+				list.add(h.getKey());
+			}
+        }
+		
+		return list;
+    }
+}
