@@ -1,0 +1,18 @@
+// Ques. 10 - Find Duplicate In Array
+
+import java.io.*;
+import java.util.* ;
+
+import java.util.ArrayList;
+
+public class Solution{
+    public static int findDuplicate(ArrayList<Integer> arr, int n){
+       HashSet<Integer> hs=new HashSet<>();
+        for(int x:arr){
+            if(!hs.add(x)){
+                return x;
+            }
+        }
+       return 0;
+    }
+}
