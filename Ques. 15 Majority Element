@@ -1,0 +1,19 @@
+//Ques. 15 Majority Element 
+
+import java.io.*;
+import java.util.* ;
+
+public class Solution {
+	public static int findMajority(int[] arr, int n) {
+		HashMap<Integer,Integer> hm=new HashMap<>();
+		for(int i=0;i<n;i++){
+			hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+		}
+		for(Map.Entry<Integer,Integer> h:hm.entrySet()){
+			if(h.getValue()>n/2){
+				return h.getKey();
+			}
+		}
+		return -1;
+	}
+}
