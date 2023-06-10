@@ -1,0 +1,17 @@
+// Ques. 41 
+Remove Duplicates from Sorted Array
+
+Solution: ---
+
+import java.util.*;
+public class Solution {
+	public static int removeDuplicates(ArrayList<Integer> a, int x) {
+		int k=1;
+		for(int i=1;i<x;i++){
+			if(!a.get(i-1).equals(a.get(i))){
+				k++;
+			}
+		}
+		return k;
+	}
+}
