@@ -1,0 +1,21 @@
+// Ques 113. PostOder Traversal
+
+// Solution:---
+
+public class Solution {
+     static void postorder(TreeNode root,List<Integer> l){
+        if(root==null){
+            return;
+        }
+        postorder(root.left,l);
+        postorder(root.right,l);
+        l.add(root.data);
+    }
+
+    public static List < Integer > getPostOrderTraversal(TreeNode root) {
+    	// Write your code here.
+        List < Integer > l=new ArrayList <>();
+    postorder(root,l);
+    return l;
+    }
+}
