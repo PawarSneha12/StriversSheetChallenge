@@ -1,0 +1,49 @@
+//Ques. 85 Queue Using Stack
+
+//Solution---
+
+import java.util.*;
+public class Queue {
+    // Define the data members(if any) here.
+Stack<Integer> st;
+Stack<Integer> st2;
+    Queue() {
+        // Initialize your data structure here.
+        st=new Stack<>();
+        st2=new Stack<>();
+    }
+
+    void enQueue(int val) {
+        // Implement the enqueue() function.
+        while(!st.isEmpty()){
+            st2.push(st.pop());
+        }
+        st.push(val);
+        while(!st2.isEmpty()){
+            st.push(st2.pop());
+        }
+    }
+
+    int deQueue() {
+        // Implement the dequeue() function.
+        if(st.isEmpty()){
+            return -1;
+        }
+        return st.pop();
+    }
+
+    int peek() {
+        // Implement the peek() function here.
+        if(st.isEmpty()){
+            return -1;
+        }
+        return st.peek();
+    }
+
+    boolean isEmpty() {
+        // Implement the isEmpty() function here.
+        if(st.isEmpty()){
+            return true;}
+            return false;
+    }
+}
