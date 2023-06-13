@@ -1,0 +1,34 @@
+
+///Ques. 9 Merge Two Sorted Arrays
+
+//Solution:----
+
+public class Solution {
+    public static int[] ninjaAndSortedArrays(int arr1[], int arr2[], int m, int n) {
+      ArrayList<Integer> list=new ArrayList<>();
+      int i=0,j=0;
+      while(i<m&&j<n){
+          if(arr1[i]<arr2[j]){
+              list.add(arr1[i]);
+              i++;
+          }
+          else{
+              list.add(arr2[j]);
+              j++;
+          }
+      }
+      while(i<m){
+          list.add(arr1[i]);
+          i++;
+      }
+      while(j<n){
+          list.add(arr2[j]);
+          j++;
+      }
+      int[] res=new int[list.size()];
+      for(int k=0;k<list.size();k++){
+          res[k]=list.get(k);
+      }
+      return res;
+    }
+}
