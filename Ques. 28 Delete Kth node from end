@@ -1,0 +1,36 @@
+Ques. 28 Delete Kth node from end 
+
+
+Solution:------
+
+public class Solution
+{
+    public static Node removeKthNode(Node head, int K)
+    {
+        if(head==null){
+            return head;
+        }
+        if(K==0){
+            return head;
+        }
+        Node t=head;
+
+        int n=0;
+        while(t!=null){
+        n++;
+        t=t.next;
+        }
+        if(n==K){
+            return head.next;
+        }
+        t=head;
+        Node p=t;
+        for(int i=1;i<=n-K;i++){
+            p=t;
+            t=t.next;
+}
+p.next=t.next;
+return head;
+
+    }
+}
