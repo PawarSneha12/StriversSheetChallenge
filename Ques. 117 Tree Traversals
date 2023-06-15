@@ -1,0 +1,41 @@
+// Ques. 117 Tree Traversals
+
+public class Solution {
+	public static void  inorder(BinaryTreeNode<Integer> root, List<Integer> in){
+		if(root==null){
+			return;
+		}
+		inorder(root.left,in);
+		in.add(root.data);
+		inorder(root.right,in);
+	}
+		public static void  preorder(BinaryTreeNode<Integer> root, List<Integer> pre){
+		if(root==null){
+			return;
+		}
+		pre.add(root.data);
+		preorder(root.left,pre);
+		preorder(root.right,pre);
+	}
+		public static void  postorder(BinaryTreeNode<Integer> root, List<Integer> post){
+		if(root==null){
+			return;
+		}
+		postorder(root.left,post);
+		postorder(root.right,post);
+		post.add(root.data);
+	}
+    public static List<List<Integer>> getTreeTraversal(BinaryTreeNode<Integer> root) {
+		List<List<Integer>> res=new ArrayList<>();
+        List<Integer> in=new ArrayList<>();
+		List<Integer> pre=new ArrayList<>();
+		List<Integer> post=new ArrayList<>();
+        inorder(root, in);
+		res.add(in);
+		preorder(root, pre);
+		res.add(pre);
+		postorder(root, post);
+		res.add(post);
+		return res;
+    }
+}
