@@ -1,0 +1,15 @@
+// Ques. 31
+// Intersection of Two Linked Lists
+
+public class Solution {
+    public static int findIntersection(Node firstHead, Node secondHead) {
+        //Write your code here
+        Node a=firstHead;
+        Node b=secondHead;
+        while(a!=b){
+            a=a==null?secondHead:a.next;
+            b=b==null?firstHead:b.next;
+        }
+        return a.data;
+    }
+}
