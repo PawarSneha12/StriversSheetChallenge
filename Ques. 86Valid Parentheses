@@ -1,0 +1,29 @@
+
+
+Ques. 86 Valid Parentheses
+
+import java.util.*;
+public class Solution {
+        public static boolean isValidParenthesis(String expression) {
+        Stack<Character> st=new Stack<>();
+        for(char ch:expression.toCharArray()){
+            if(ch=='['||ch=='('||ch=='{'){
+                st.push(ch);
+            }
+            else{
+                if(!st.isEmpty()){
+                char c=st.peek();
+     if(c=='['&&ch==']'||c=='('&&ch==')'||c=='{'&&ch=='}'){
+                        st.pop();
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                else{
+                    return false;
+                }
+            }
+        }
+        return st.isEmpty();} 
+}
